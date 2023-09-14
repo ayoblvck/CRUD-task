@@ -1,8 +1,8 @@
 # API DOCUMENTATION
 
-Welcome to my API documentation for a test API. This API allows yoy perform Create, Read, Update, Delete (CRUD) operations on persons records
+Welcome to the API documentation for my person management API. This API allows you perform Create, Read, Update, Delete (CRUD) operations on persons records
 
-The **base URL** for all endpoints is `"https://maryamsanni.pythonanywhere.com/api"`
+The **base URL** for all endpoints is "https://maryamsanni.pythonanywhere.com/api"
 
 ## Endpoints
 
@@ -16,13 +16,13 @@ The **base URL** for all endpoints is `"https://maryamsanni.pythonanywhere.com/a
 
 - Request Body:
 
-    - `**name**` (string, required): The person's name
+    - `name` (string, required): The person's name
 
-    - `**age**` (integer): The person's age
+    - `age` (integer): The person's age
 
-    - `**email**` (string): The person's email address
+    - `email` (string): The person's email address
     
-    - `**country**` (string): The person's country of origin
+    - `country` (string): The person's country of origin
 
 #### An example request
 
