@@ -1,32 +1,32 @@
 # API DOCUMENTATION
 
-Welcome to my API documentation for a test API. This API allows yoy perform Create, Read, Update, Delete (CRUD) operations on person records
+Welcome to my API documentation for a test API. This API allows yoy perform Create, Read, Update, Delete (CRUD) operations on persons records
 
-The **base URL** for all endpoints is []("https://maryamsanni.pythonanywhere.com/api")
+The **base URL** for all endpoints is `"https://maryamsanni.pythonanywhere.com/api"`
 
 ## Endpoints
 
 ### Create a new person
 
-- Endpoint: '/api'
+- Endpoint: `/api`
 
 - Method: POST
 
-- Description: Add a new persons record and detais
+- Description: Add a new person's record
 
 - Request Body:
 
-    - **name** (string, required): The person's name
+    - `**name**` (string, required): The person's name
 
-    - **age** (integer): The person's age
+    - `**age**` (integer): The person's age
 
-    - **email** (string): the person's email address
+    - `**email**` (string): The person's email address
     
-    - **country** (string): the person's country of origin
+    - `**country**` (string): The person's country of origin
 
 #### An example request
 
-```
+``` http
 POST /api
 Content-Type: application/json
 
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 #### An example response
 
-```
+``` http
 "message": "Person added successfully"
 "person": {
     "id": 1,
@@ -63,7 +63,7 @@ Content-Type: application/json
 GET /api/persons
 ```
 #### Example response
-```
+``` http
 [
     {
         "id": 1,
@@ -90,12 +90,12 @@ GET /api/persons
 
 #### Example request
 
-```
+``` http
 GET /api/1
 ```
 #### Example response
 
-```
+``` http
 {
     "id": 1,
     "name": "Mary Jane"
@@ -113,7 +113,7 @@ GET /api/1
 - Request Body: Any of the following fields (name, age, country, email) can be included to update.
 
 #### Example Request
-```
+``` http
 PUT /api/1
 Content-Type: application/json
 
@@ -124,14 +124,14 @@ Content-Type: application/json
 
 #### Example Response
 
-```
+``` http
 {
     "id": 1,
     "name": "Mary Jane"
     "age": 27,
     "country": "Updated country",
     "email": "maryjane@example.com"
-},
+}
 ```
 
 ### Delete Person by ID
@@ -140,12 +140,12 @@ Content-Type: application/json
 - Description: Delete a person by id
 
 #### Example Request
-```
+``` http
 DELETE /api/1
 ```
 #### Example Response
 
-```
+``` http
 {
  "message": "Person deleted successfully"
 }
