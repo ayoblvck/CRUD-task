@@ -30,11 +30,11 @@ with app.app_context():
     db.create_all()
 
 # CREATE (POST) endpoint
-@app.route('/api/', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def create_person():
     data = request.get_json()  # Get JSON data from the request body
 
-    # Validate and process the data (e.g., add to the data store)
+    # Validate and process the data
     new_person = Person(name=data["name"], age=data['age'], country=data['country'], email=data['email'])
     
     #check for exceptions
@@ -45,7 +45,17 @@ def create_person():
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "Failed to add person", "error": str(e)}), 500
+
 # READ (GET) endpoint
+
+#get all persons
+@app.route('/api/persons', methods=["GET"])
+def get_all_persons():
+    persons = Person.query.all()
+    serialized_persons = [person.serialize() for person in persons]
+    return jsonify(serialized_persons), 200
+
+#get  a person by id
 @app.route('/api/<int:person_id>', methods=['GET'])
 def get_person(person_id):
     person = Person.query.get(person_id)
@@ -53,10 +63,20 @@ def get_person(person_id):
         return jsonify({"message": "Person not found"}), 404
     return jsonify(person.serialize()), 200
 
+#get a person by name
+@app.route('/api/<string:person_name>', methods=['GET'])
+def get_person_by_name(person_name):
+    persons = Person.query.filter_by(name=person_name).all()
+    if not persons:
+        return jsonify({"message": "No persons found with that name"})
+    serialized_persons = [person.serialize() for person in persons]
+    return jsonify(serialized_persons),200
+
+
 # UPDATE (PUT) endpoint
 @app.route('/api/<int:person_id>', methods=['PUT'])
 def update_person(person_id):
-    data = request.get_json()  # Get JSON data from the request body
+    data = request.get_json()  
 
     # Find the person to update by ID
     person = Person.query.get(person_id)
@@ -87,4 +107,4 @@ def delete_person(person_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)  # Run in debug mode for development
+    app.run()  # Run in debug mode for development
