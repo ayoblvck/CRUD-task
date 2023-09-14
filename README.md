@@ -1,6 +1,6 @@
 # Person management API
 
-This is a Person Management API. This API allows you to perform CRUD (Create, Read, Update, Delete) operations on person records.
+This is a Person Management API called MyAPI. This API allows you to perform CRUD (Create, Read, Update, Delete) operations on person records.
 
 ## Features
 

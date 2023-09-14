@@ -1,6 +1,6 @@
 # API DOCUMENTATION
 
-Welcome to the API documentation for my person management API. This API allows you perform Create, Read, Update, Delete (CRUD) operations on persons records
+Welcome to the API documentation for a person management API called MyAPI. This API allows you perform Create, Read, Update, Delete (CRUD) operations on persons records
 
 The **base URL** for all endpoints is "https://maryamsanni.pythonanywhere.com/api"
 
@@ -154,3 +154,30 @@ DELETE /api/1
 ## Limitations
 
 - Currently, there is no authentication implemented for these endpoints. Thes can be implemented if needed, for instance, in production use
+
+## Setting up and running MyAPI locally
+
+To set up and run this API, follow these steps
+
+1. Clone the repository to your local machine
+
+``` bash
+git clone https://github.com/ayoblvck/CRUD-task.git
+```
+
+2. Ensure all dependencies are installed, if not, install them
+
+``` bash
+pip install -r requirements.txt
+
+```
+
+3. Configure the database, ensure that SQLite is set up
+
+4. Run the API
+
+5. Access teh API lically, by defailt it should be at http://localhost:5000/
+
+6. Test the API using Postman or any other API testing tool to test that all CRUD operations work as expected
+
+7. Dont forget to stop the local server after testing using 'Ctrl + C'
