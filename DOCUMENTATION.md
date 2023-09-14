@@ -154,6 +154,7 @@ DELETE /api/1
 ## Limitations
 
 - Currently, there is no authentication implemented for these endpoints. Thes can be implemented if needed, for instance, in production use
+- Getting person by name is case sensitive
 
 ## Setting up and running MyAPI locally
 
