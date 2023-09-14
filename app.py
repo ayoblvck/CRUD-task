@@ -107,4 +107,4 @@ def delete_person(person_id):
 
 
 if __name__ == '__main__':
-    app.run()  # Run in debug mode for development
+    app.run() 
